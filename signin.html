@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheels Exchange - Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+
+        
+header{
+    position:fixed; 
+    width:100% ; 
+    z-index:100; 
+    top:0px;
+    height: 130px;
+}
+
+
+
+
+#title {
+    margin-left: 100px;
+    margin-top: 10px;
+    background-color: purple;
+    border: 3px solid greenyellow;
+    width: 400px;
+    height: 60px;
+    padding-left: 28px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px blue inset;
+}
+
+        nav{
+            margin-left: 100px;
+            padding-top: 5px;
+        }
+
+        nav li:hover {
+    background-color: rgb(228, 195, 252);
+    color:black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 4px solid rgb(214, 201, 220);
+    box-shadow: 2px 6px 2px black inset;
+}
+
+
+#ads{
+    display: none;
+    position: fixed;
+    width: 350px;
+    right: 10px;
+    top: -20px;
+}
+        
+#userLogo{
+    width: 50px;
+    height: 59px;
+    background-color: rgb(15, 15, 16);
+    position: relative;
+    top: -70px;
+    right:-800px;
+    align-items: center;
+    border: 1px solid gold;
+    box-shadow: 5px 10px 5px rgb(19, 21, 19);
+
+}
+
+#userLogoName{
+    color:rgb(95, 233, 57);
+    font-size: 20px;
+    position: relative;
+    right:-60px;
+    top:-52px;
+    font-family:cursive;
+    width: 150px;
+    /* background-color: rgb(69, 69, 77); */
+    /* border: 2px solid white; */
+    box-shadow: 5px 10px 10px rgb(19, 21, 18);
+}
+
+
+#websiteLogo{
+    top: 1px;
+}
+
+
+
+        #websiteLogo img{
+    
+    border-radius: 500px;
+    border: 3px solid wheat;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+        .container {
+            max-width: 400px;
+            margin: auto;
+            margin-top: 200px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #311010d0;
+            color: white;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #007bff;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input {
+            border-radius: 4px;
+            background-color: rgb(18, 3, 3);
+            
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .bottom-text {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .bottom-text a {
+            color: #007bff;
+        }
+
+        body {
+            background-image: url("https://source.unsplash.com/1600x720/?car"), url("images/s3.avif");
+            background-size: cover;
+        }
+
+        #loginPopup {
+            width: 400px;
+            height: 200px;
+            background-color: rgb(229, 241, 245);
+            color: rgb(29, 13, 13);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display:none ;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        #loginIcon {
+            display: block;
+        }
+
+        #loginPopup button{
+            margin-top: 20px;
+            background-color: rgb(35, 50, 12);
+            box-shadow: 5px 5px 5px gray;
+            padding: 2px;
+            
+            
+        }
+
+        #loginText{
+            color: green;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+
+    <div id="websiteLogo" style="position: fixed;z-index: 1000;"><img src="images/carwheel1.png" alt="" height="100px;width:250px;"></div>
+
+    <header class="bg-dark" >
+        <div ">
+            <h1 class=" text-light" id="title">Wheels-Exchange</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Add Vehicle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buyCar.html">buyCar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="c.html">Customers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="orders.html">Orders/cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signin.html">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link" id="logout" onclick="logout();" href="signin.html">Logout </a></li>
+        
+                </ul>
+            </nav>
+        </div>
+
+        <img  id="ads" src="images/carpng.png" alt="">
+        
+        <div id="userLogo"><i class="fa fa-user" style="font-size:48px;color:gold;padding-left: 8px;"></i>
+            <p id="userLogoName">Abhinandan desai </p>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        <h1>Sign In</h1>
+        <form id="signin">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username"
+                    required>
+                <span id="usernameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password"
+                    placeholder="Enter your password" required>
+                <span id="passwordError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" onclick="validateForm()">Sign In</button>
+        </form>
+        <div class="bottom-text">
+            Don't have an account? <a href="register.html">Sign Up</a>
+        </div>
+    </div>
+
+    <div id="loginPopup">
+        <h2 id="loginText">log-in successfully</h2>
+        <div id="loginIcon">
+            <i class="fa fa-check-circle" style="font-size:48px;color:rgb(46, 226, 15)"></i>
+
+        </div>
+
+        <button class="btn-primary" id="continue" ><a href="index.html" style="color: rgb(242, 238, 238);text-decoration: none;">continue...</a></button>
+    </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+<script src="script/signin.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

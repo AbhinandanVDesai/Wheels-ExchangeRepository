@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheels Exchange</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+</head>
+
+<body  style="background-image:url('https://source.unsplash.com/1600x720/?car'), url('images/silver.avif');">
+    <div id="websiteLogo" style="position: fixed;z-index: 1000;margin-top: 1px;"><img src="images/carwheel1.png" alt="" height="100px;width:250px;"></div>
+
+    
+
+    
+    <header class="bg-dark " >
+        <div  class="container">
+            <h1 class="text-light" id="title">Wheels-Exchange</h1>
+            <nav style="position: relative;bottom:-20px;">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Add Vehicle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buyCar.html">buyCar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="c.html">Customers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="orders.html">Orders/cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signin.html">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link" id="logout" onclick="logout();" href="signin.html">Logout </a></li>
+        
+                </ul>
+        
+            </nav>
+        </div>
+
+        <img  id="ads" src="images/carpng.png" alt="">
+        
+        <div id="userLogo"><i class="fa fa-user" style="font-size:48px;color:gold;padding-left: 8px;"></i>
+            <p id="userLogoName"> </p>
+        </div>
+    </header>
+   
+
+    
+    <script>
+    
+
+        function signIn(){
+            window.location.href="signin.html";
+        }
+
+        function register(){
+            window.location.href="register.html";
+        }
+
+        
+    </script>
+
+    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="1000"> <!-- Reduced from 10000 to 5000 -->
+                <img src="images/mercedes1.avif"
+                .m.0e" onerror="this.src='images/car.png'" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Explore Quality Second-Hand Mercedes</h5>
+                    <p>Find your dream Mercedes among our top-tier selection of second-hand vehicles.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="1500"> <!-- Reduced from 2000 to 1500 -->
+                <img src="images/lamborgini.avif" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Discover Premium Tata Cars</h5>
+                    <p>Browse through our range of high-quality second-hand Tata vehicles.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="500"> <!-- Reduced from default to 500 -->
+                <img src="images/vintage2.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Find Top-Notch Second-Hand Teslas</h5>
+                    <p>Upgrade your ride with our reliable selection of second-hand Tesla vehicles.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    
+    
+
+
+
+    <div id="instruction-box">
+        <h2>Welcome!</h2>
+        <p>If you are new here, please register or sign in.</p>
+        <button class="sign-in-btn btn-primary" onclick="signIn()">Sign In</button>
+        <button class="register-btn btn-primary" onclick="register()">Register</button>
+    </div>
+
+       
+
+
+    <main class="mt-4" id="addvehicle">
+        <div class="container">
+            <h1 class="heading">Add Your Vehicle here</h1>
+            <form>
+                <div class="form-group">
+                    <label for="owner">Owner's Name</label>
+                    <input type="text" class="form-control" id="owner" placeholder="Enter owner's name"
+                        oninput="validateOwner();"><span id="ownerIcon"></span>
+                </div>
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <input type="text" class="form-control" id="model" placeholder="Enter model"
+                        oninput="validateModel()">
+                </div>
+                <div class="form-group">
+                    <label for="passing">Passing Year</label>
+                    <input type="text" class="form-control" id="passing" placeholder="Enter passing year"
+                        oninput="validatePassing()">
+                </div>
+                <div class="form-group">
+                    <label for="running">Running</label>
+                    <input type="text" class="form-control" id="running" placeholder="Enter running"
+                        oninput="validateRunning()">
+                </div>
+                <div class="form-group">
+                    <label for="expectedPrice">Expected Price</label>
+                    <input type="text" class="form-control" id="expectedPrice" placeholder="Enter the price you wish to sold this vehicle"
+                        oninput="validateExpectedPrice()">
+                </div>
+                <div class="form-group">
+                    <label for="fuel">Fuel</label>
+                    <input type="text" class="form-control" id="fuel" placeholder="Enter fuel type"
+                        oninput="validateFuel()">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="formValidation()">Add Vehicle</button>
+                <button type="button" class="btn btn-secondary" onclick="recentlyAddVehicles()">Recently Added
+                    Vehicles</button>
+            </form>
+        </div>
+
+
+
+        <table class="table mt-4" style="display: none;">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Owner</th>
+                    <th>Model</th>
+                    <th>Passing Year</th>
+                    <th>Running</th>
+                    <th>Expected Price </th>
+
+                    <th>Fuel</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+
+            </tbody>
+        </table>
+    </main>
+
+
+
+
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card">
+                <img src="https://source.unsplash.com/1600x700/?car" class="card-img-top" alt="" onerror="this.onerror=null; this.src='images/swift.jpg';">
+                <div class="card-body">
+                    <h5 class="card-title">Leading Second-hand Car Exchanger</h5>
+                    <p class="card-text">
+                        "Wheels Exchange: Pioneering the Future of Second-Hand Car Sales! With a commitment to
+                        innovation and customer satisfaction, we've established ourselves as a leader in the pre-owned
+                        car marketplace. Our dedication to transparency, reliability, and excellent service has earned
+                        us the trust of buyers and sellers alike. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://source.unsplash.com/1600x700/?blackcar" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='images/silver.avif';">
+                <div class="card-body">
+                    <h5 class="card-title">Exclussive offers from Wheels-Exchange</h5>
+                    <p class="card-text">
+
+                        "Explore Our Latest Offers on Quality Used Cars! Discover unbeatable deals on a wide range of
+                        pre-owned vehicles. Whether you're in the market for a reliable sedan, a spacious SUV, or an
+                        eco-friendly hybrid, we have offers that cater to every preference and budget. Don't miss out on
+                        these limited-time deals - find your perfect ride with Wheels-Exchange.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://source.unsplash.com/1600x700/?mercedes" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='images/jaguarEpace.jpg';">
+                <div class="card-body">
+                    <h5 class="card-title">Top Features</h5>
+                    <p class="card-text">"Discover the Features that Make Wheels Exchange Your Ultimate Destination for
+                        Buying and Selling Used Cars! Our intuitive platform offers advanced search and filtering
+                        options, making it easy to find the perfect vehicle. From detailed vehicle histories to secure
+                        payment processing, we provide all the tools you need for a seamless buying or selling
+                        experience. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://source.unsplash.com/1600x700/?lamborgini" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='images/jaguarIpace.jpg';">
+                <div class="card-body">
+                    <h5 class="card-title">Latest deals</h5>
+                    <p class="card-text">
+                        "Stay Up-to-Date with Our Latest Deals on Quality Used Cars! From clearance specials to
+                        exclusive discounts, we're constantly updating our inventory with new deals and promotions.
+                        Whether you're looking for a budget-friendly commuter car or a luxury vehicle at a great price,
+                        you'll find it here. Check back often to see our newest arrivals and take advantage of our
+                        unbeatable offers."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <h2 class="mb-4" style="background-color: aqua;text-align: center;">About Wheels Exchange</h2>
+        <div id="accordion">
+            <!-- Accordion Item 1 -->
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Why Choose Wheels Exchange?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        Wheels Exchange offers a unique platform for buying and selling second-hand vehicles. Here are
+                        some reasons why you should choose us:
+                        <ul>
+                            <li>Wide Selection: We have a diverse range of vehicles available for purchase.</li>
+                            <li>Convenience: Our website provides a user-friendly interface for easy browsing and
+                                transactions.</li>
+                            <li>Trustworthiness: We ensure that all listings are verified, providing a secure
+                                environment for buyers and sellers.</li>
+                            <li>Community: Join a community of car enthusiasts and sellers who share your passion.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Accordion Item 2 -->
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            Features of Wheels Exchange
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        Explore the exciting features of Wheels Exchange:
+                        <ul>
+                            <li>Advanced search functionality to find the perfect vehicle.</li>
+                            <li>Interactive car gallery showcasing available vehicles with detailed information.</li>
+                            <li>User-friendly interface for seamless buying and selling experiences.</li>
+                            <li>Secure payment options for hassle-free transactions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="mt-4 py-4 bg-dark">
+        <div class="container text-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@wheelsexchange.com</p>
+                    <p>Phone: +1234567890</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social-icons mt-3">
+                <a href="https://www.facebook.com/yourpage" target="_blank"><img src="facebook-icon.png" alt="Facebook"
+                        width="30"></a>
+                <a href="https://www.instagram.com/yourpage" target="_blank"><img src="instagram-icon.png"
+                        alt="Instagram" width="30"></a>
+                <a href="https://wa.me/yourphonenumber" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp"
+                        width="30"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script/home.js"></script>
+
+    <!-- JavaScript -->
+    
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - Wheels Exchange</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/records.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div id="websiteLogo" style="position: fixed;z-index: 1000;margin-top: 1px;"><img src="images/carwheel1.png" alt="" height="100px;width:250px;"></div>
+
+    
+    <header class="bg-dark " >
+        <div class="container">
+            <h1 class="text-light" id="title">Wheels-Exchange</h1>
+            <nav style="position: relative;bottom:-20px;">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Add Vehicle</a></li>
+                    <li class="nav-item"><a class="nav-link" href="buyCar.html">buyCar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="c.html">Customers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="orders.html">Orders/cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signin.html">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link" id="logout" onclick="logout();" href="signin.html">Logout </a></li>
+        
+                </ul>
+            </nav>
+        </div>
+
+        <img  id="ads" src="images/carpng.png" alt="">
+
+        <div id="userLogo"><i class="fa fa-user" style="font-size:48px;color:gold;padding-left: 8px;"></i>
+            <p id="userLogoName">Abhinandan desai </p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" >
+            <h2 style="color:white;background-color: purple;">cars ready to sell</h2>
+
+            
+            <div id="popup" style=" display:none; width:600px; margin: 200px auto;" >
+                <main class="mt-4" id="addvehicle">
+                    <div class="container">
+                        <h1 class="heading" id="updateVehicleHeading">update your vehicle details</h1>
+                        <form>
+                            <div class="form-group">
+                                <label for="owner">Owner's Name</label>
+                                <input type="text" class="form-control" id="owner" placeholder="Enter owner's name">
+                            </div>
+                            <div class="form-group">
+                                <label for="model">Model</label>
+                                <input type="text" class="form-control" id="model" placeholder="Enter model">
+                            </div>
+                            <div class="form-group">
+                                <label for="passing">Passing Year</label>
+                                <input type="text" class="form-control" id="passing" placeholder="Enter passing year">
+                            </div>
+                            <div class="form-group">
+                                <label for="running">Running</label>
+                                <input type="text" class="form-control" id="running" placeholder="Enter running">
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="number" class="form-control" id="price" placeholder="Enter expected price">
+                            </div>
+                            <div class="form-group">
+                                <label for="fuel">Fuel</label>
+                                <input type="text" class="form-control" id="fuel" placeholder="Enter fuel type">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="updateBtn()" style="margin-bottom: 20px;">update</button>
+                            <button type="button" class="btn btn-secondary" style="margin-bottom: 20px;">Reset</button>
+                        </form>
+                    </div>
+            
+            </div>
+
+
+
+
+            <table class="table table-light table-striped" id="vehiclesrecord">
+                <thead>
+                    <tr>
+                        <th>regNo</th>
+
+                        <th>Owner</th>
+                        <th>Model</th>
+                        <th>Passing Number</th>
+                        <th>Running</th>
+                        <th>Fuel</th>
+                        <th>Price</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <!-- Customer profiles will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Wheels Exchange</p>
+        </div>
+    </footer>
+
+    
+    <script src="script/customers.js"></script>
+</body>
+</html>
